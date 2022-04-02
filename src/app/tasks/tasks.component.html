@@ -1,0 +1,19 @@
+<h2>Disciplinas cursadas</h2>
+<div></div>
+<table border="1">
+  <tr>
+    <td>Materia</td>
+    <td>Dia</td>
+    <td>Hora</td>
+  </tr>
+  <tr *ngFor="let a of disciplina.getTable(); index as i">
+    <td>{{ a.title }}</td>
+    <td>{{ a.dia }}</td>
+    <td>{{ a.hora }}</td>
+    <td><button (click)="disciplina.RemoveTable(i)">Remover</button></td>
+  </tr>
+</table>
+<input #title id="title" type="text"/>
+<input #dia id="dia" type="text"/>
+<input #hora id="hora" type="text" />
+<button (click)="disciplina.AdicioTable(title.value,dia.value,hora.value)">Adicionar</button>
